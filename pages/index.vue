@@ -6,7 +6,7 @@
         HeIsNuxt
       </h1>
       <h2 class="subtitle">
-        My sensational Nuxt.js project
+        He is officially Nuxt.
       </h2>
       <div class="links">
         <a
