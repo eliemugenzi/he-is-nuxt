@@ -2,7 +2,7 @@
      <a-list-item slot="renderItem" slot-scope="joke">
       <a-list-item-meta
       >
-        <a slot="title" href="https://www.antdv.com/">{{ joke.joke }}</a>
+        <nuxt-link slot="title" :to="`/jokes/${joke.id}`">{{ joke.joke }}</nuxt-link>
         <a-avatar
           slot="avatar"
           src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
