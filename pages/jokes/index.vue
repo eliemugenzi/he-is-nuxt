@@ -2,11 +2,12 @@
   <main>
       <h1>Jokes</h1>
 
-      <a-list item-layout="horizontal" :data-source="jokes" v-if="jokes.length!==0">
+      <a-list item-layout="horizontal" :data-source="jokes" v-if="fetched">
          <div v-for="joke in jokes" :key="joke.id">
             <joke :joke="joke" />
          </div>
       </a-list>
+      <p v-else>Fetching jokes...</p>
   </main>
 </template>
 
@@ -22,6 +23,7 @@ export default {
    data(){
        return {
            jokes: [],
+           fetched: false,
        }
    },
    async created(){
@@ -36,6 +38,7 @@ export default {
           const { data } = await axios.get('https://icanhazdadjoke.com/search', config);
           console.log('RES', data.results);
           this.jokes = data.results;
+          this.fetched = true;
        } catch(error){
            console.log(error);
        }
