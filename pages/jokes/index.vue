@@ -6,7 +6,11 @@
 
 <script>
 export default {
-
+   head(){
+       return {
+           title: 'List of Jokes'
+       }
+   }
 }
 </script>
 
